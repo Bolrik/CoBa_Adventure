@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27aefe63c6b9e9548853665afab3a6ff, type: 3}
+  m_Name: '#017 I am back'
+  m_EditorClassIdentifier: 
+  levelIndex: 17
+  dialogNodes:
+  - speaker: Coopa
+    lines:
+    - Hey, I'm back.
+    - Great progress so far.
+  - speaker: Coopa
+    lines:
+    - Oh, as you can see. There can be more than just one CoBa.
+    - And you are in charge of both of them.
+  - speaker: Coopa
+    lines:
+    - Let them work together to clear this path.

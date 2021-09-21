@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27aefe63c6b9e9548853665afab3a6ff, type: 3}
+  m_Name: '#015 Connection Lost'
+  m_EditorClassIdentifier: 
+  levelIndex: 15
+  dialogNodes:
+  - speaker: Dabsi
+    lines:
+    - So, the last CoBa-Keeper, as you are one.
+    - Had mysteriously disappeared.
+  - speaker: Dabsi
+    lines:
+    - The last thing #hat is k#own...
+    - "He w!s attempt&ng to s0lve l3v%l \xA7="
+  - speaker: '#*!->='
+    lines:
+    - '*Connection Lost*'

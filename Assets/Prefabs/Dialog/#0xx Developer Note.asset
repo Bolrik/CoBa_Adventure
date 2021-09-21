@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27aefe63c6b9e9548853665afab3a6ff, type: 3}
+  m_Name: '#0xx Developer Note'
+  m_EditorClassIdentifier: 
+  levelIndex: 16
+  dialogNodes:
+  - speaker: Developer
+    lines:
+    - Hey there, ...
+    - Right now that's the end of my little project
+  - speaker: Developer
+    lines:
+    - I really appreciate that you played it
+    - And wanted to say 'Thank You'
+  - speaker: Developer
+    lines:
+    - I hope you enjoyed it :)
+    - Feedback of any kind is absolutely welcome
+    - See Ya
