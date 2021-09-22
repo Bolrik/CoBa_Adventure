@@ -32,6 +32,11 @@ namespace UI.Templates
 
                 for (int levelIndex = 0; levelIndex < world.Count; levelIndex++)
                 {
+                    Level.Level level = world.Get(levelIndex);
+
+                    if (!level.IsUnlocked)
+                        continue;
+
                     LevelButton levelButton = GameObject.Instantiate(this.LevelButtonPrefab);
                     levelButton.WorldIndex = worldIndex;
                     levelButton.LevelIndex = levelIndex;

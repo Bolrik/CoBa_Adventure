@@ -87,6 +87,11 @@ namespace Achievements
                 this.Completed[achievement.Key] = false;
             }
         }
+
+        public Dictionary<AchievementType, bool> GetAchievements()
+        {
+            return this.Completed;
+        }
     }
 
     public class AchievementChecker

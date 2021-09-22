@@ -42,5 +42,9 @@ namespace Audio
         [SerializeField] private AudioClip[] coBaSelect;
         public static AudioClip[] CoBaSelect { get { return Instance.coBaSelect; } }
 
+        [SerializeField] private AudioClip buttonHover;
+        public static AudioClip ButtonHover { get { return Instance.buttonHover; } }
+
+
     }
 }

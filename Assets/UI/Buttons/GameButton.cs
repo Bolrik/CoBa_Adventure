@@ -29,7 +29,7 @@ namespace UI.Buttons
 
         public void OnPointerEnter(PointerEventData eventData)
         {
-            Debug.Log("Click");
+            Audio.AudioManager.Instance.Play(Audio.AudioAssets.ButtonHover);
         }
     }
 }

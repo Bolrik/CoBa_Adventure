@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.U2D;
 
 namespace Basics
@@ -63,6 +64,11 @@ namespace Basics
 
         private void Update()
         {
+            if (SceneManager.GetActiveScene().buildIndex != 2)
+            {
+                return;
+            }
+
             if (Input.mouseScrollDelta.y != 0)
             {
                 int ppu = this.PixelPerfectCamera.assetsPPU;

@@ -7109,6 +7109,7 @@ MonoBehaviour:
   coBaSelect:
   - {fileID: 8300000, guid: ab5083f29e32d4546b5d417b6c60d1dc, type: 3}
   - {fileID: 8300000, guid: ccb1a15effc014b429cdc23584a58c71, type: 3}
+  buttonHover: {fileID: 8300000, guid: a1f7d73d979eea448ab3c2a028927046, type: 3}
 --- !u!1 &1729377982
 GameObject:
   m_ObjectHideFlags: 0

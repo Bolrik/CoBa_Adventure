@@ -4959,7 +4959,7 @@ GameObject:
   - component: {fileID: 78674287341438554}
   - component: {fileID: 2425650206690989457}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: Achievement Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
