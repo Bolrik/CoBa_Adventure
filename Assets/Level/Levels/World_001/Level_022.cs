@@ -19,50 +19,47 @@ namespace Level
         }
         #endregion
 
-        public override int ScaleX => 10;
-        public override int ScaleY => 11;
+
+
+        public override int ScaleX => 7;
+        public override int ScaleY => 14;
 
         protected override void BuildScheme(LevelLayoutScheme scheme)
         {
             // Wall
-            scheme.Add(() => Wall.Create(), 3, 3, 4, 3);
-            scheme.Add(() => Wall.Create(), 3, 7, 6, 7);
-            scheme.Add(() => Wall.Create(), 6, 1, 6, 5);
+            scheme.Add(() => Wall.Create(), 3, 0, 3, 10);
+            scheme.Add(() => Wall.Create(), 4, 10, 6, 10);
 
             // Flag
-            scheme.Add(() => GoalFlag.Create(), 8, 1);
+            scheme.Add(() => GoalFlag.Create(), 5, 12);
 
             // Ball
-            scheme.Add(() => ColorBall.Create(ColorCode.None), 4, 1);
+            scheme.Add(() => ColorBall.Create(ColorCode.None), 1, 2);
+            scheme.Add(() => ColorBall.Create(ColorCode.None), 5, 1);
 
             // Box
-            scheme.Add(() => ColorBox.Create(ColorCode.Blue), 6, 6);
-            scheme.Add(() => ColorBox.Create(ColorCode.Green), 6, 0);
-            scheme.Add(() => ColorBox.Create(ColorCode.Red), 5, 3);
+            scheme.Add(() => ColorBox.Create(ColorCode.Red), 0, 13);
+            scheme.Add(() => ColorBox.Create(ColorCode.Green), 5, 9);
 
             // Button
+            scheme.Add(() => ColorButton.Create(ColorCode.Red), 1, 0);
 
             // Cleaner
-            scheme.Add(() => CleanerBox.Create(ColorCode.None), 0, 0);
-            scheme.Add(() => CleanerBox.Create(ColorCode.None), 0, 10);
-            scheme.Add(() => CleanerBox.Create(ColorCode.None), 9, 10);
+
 
             // Door
-            scheme.Add(() => ColorDoor.Create(ColorCode.Blue, false), 7, 5, 9, 5);
-            scheme.Add(() => ColorDoor.Create(ColorCode.Blue, true), 0, 7, 2, 7);
-            scheme.Add(() => ColorDoor.Create(ColorCode.Green, true), 7, 6, 9, 6);
-            scheme.Add(() => ColorDoor.Create(ColorCode.Red, false), 5, 8, 5, 10);
-            scheme.Add(() => ColorDoor.Create(ColorCode.Red, true), 0, 3, 2, 3);
-            scheme.Add(() => ColorDoor.Create(ColorCode.Red, true), 7, 4, 9, 4);
+            scheme.Add(() => ColorDoor.Create(ColorCode.None, true), 0, 4, 2, 4);
+            scheme.Add(() => ColorDoor.Create(ColorCode.None, false), 0, 10, 2, 10);
+            scheme.Add(() => ColorDoor.Create(ColorCode.Green, true), 3, 11, 3, 13);
+            scheme.Add(() => ColorDoor.Create(ColorCode.Red, true), 4, 7, 6, 7);
 
             // DDoor
 
             // Death
 
             // Sensor
-            scheme.Add(() => Sensor.Create(3, 3), 1, 1);
-            scheme.Add(() => Sensor.Create(3, 3), 1, 9);
-            scheme.Add(() => Sensor.Create(3, 3), 8, 9);
+            scheme.Add(() => Sensor.Create(3, 3), 5, 4);
+
         }
     }
 }

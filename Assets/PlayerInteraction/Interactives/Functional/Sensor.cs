@@ -28,12 +28,6 @@ namespace PlayerInteraction.Interactives
 
         public override bool TriggerReaction => false;
 
-
-        public override void OnTouch(ColorBall colorBall)
-        {
-
-        }
-
         private void OnTriggerEnter2D(Collider2D collision)
         {
             if (collision.GetComponentInParent<ColorBall>() is ColorBall colorBall)

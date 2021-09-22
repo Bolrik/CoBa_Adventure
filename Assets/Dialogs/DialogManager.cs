@@ -58,6 +58,7 @@ namespace Dialogs
 
         float NextNodeLineIncrement { get; set; }
         // float NextNodeLineIncrementBase { get; set; }
+        public bool IsActive { get => this.ActiveDialog != null; }
 
         string DialogNodeText { get; set; }
         System.Random Random { get; set; } = new System.Random();
@@ -188,9 +189,14 @@ namespace Dialogs
             this.DialogCanvas.SetActive(value);
         }
 
-        private void StopDialog(LevelDoneEventArgs eventArgs)
+        public void StopDialog()
         {
             this.DeActivate(false);
+        }
+
+        private void StopDialog(LevelDoneEventArgs eventArgs)
+        {
+            this.StopDialog();
         }
     }
 }

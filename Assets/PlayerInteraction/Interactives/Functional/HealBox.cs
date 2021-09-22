@@ -9,18 +9,21 @@ using UnityEngine;
 
 namespace PlayerInteraction.Interactives
 {
-    public class DeathBox : InteractiveObject
+    public class HealBox : InteractiveObject
     {
-        public static DeathBox Create()
+        public static HealBox Create()
         {
-            DeathBox instance = GameObject.Instantiate(GameAssets.DeathBox);
+            HealBox instance = GameObject.Instantiate(GameAssets.HealBox);
 
             return instance;
         }
 
         protected override void OnTouch(ColorBall colorBall)
         {
-            colorBall.Die();
+            if (colorBall.ColorBallInfo.IsAlive)
+                return;
+
+            colorBall.Revive();
         }
     }
 }

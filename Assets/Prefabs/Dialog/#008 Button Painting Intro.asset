@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27aefe63c6b9e9548853665afab3a6ff, type: 3}
   m_Name: '#008 Button Painting Intro'
   m_EditorClassIdentifier: 
+  worldIndex: 0
   levelIndex: 8
   dialogNodes:
   - speaker: Coopa
@@ -19,4 +20,4 @@ MonoBehaviour:
     - There is one thing to [Buttons] I did not mention yet.
   - speaker: Coopa
     lines:
-    - 'CoBas can paint them if they press a [Button] while they are colored. '
+    - A blank [Button] can be colored by CoBas

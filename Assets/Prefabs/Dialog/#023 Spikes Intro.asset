@@ -10,18 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 27aefe63c6b9e9548853665afab3a6ff, type: 3}
-  m_Name: '#017 I am back'
+  m_Name: '#023 Spikes Intro'
   m_EditorClassIdentifier: 
-  levelIndex: 17
+  worldIndex: 0
+  levelIndex: 23
   dialogNodes:
-  - speaker: Coopa
+  - speaker: '*Robotic Voice*'
     lines:
-    - Hey, I'm back.
-    - Great progress so far.
-  - speaker: Coopa
+    - WARNING
+    - WARNING
+  - speaker: '*Robotic Voice*'
     lines:
-    - Oh, as you can see. There can be more than just one CoBa.
-    - And you are in charge of both of them.
-  - speaker: Coopa
-    lines:
-    - Let them work together to clear this path.
+    - Hazardous Ground detected.
+    - Spikes may cause unwanted harm.
+    - Handle with care!

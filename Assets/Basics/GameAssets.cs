@@ -91,5 +91,8 @@ namespace Basics
 
         [SerializeField] private Sensor sensor;
         public static Sensor Sensor { get { return Instance.sensor; } }
+
+        [SerializeField] private HealBox healBox;
+        public static HealBox HealBox { get { return Instance.healBox; } }
     }
 }

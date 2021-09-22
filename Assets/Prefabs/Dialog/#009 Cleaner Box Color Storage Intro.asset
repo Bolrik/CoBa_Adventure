@@ -12,12 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27aefe63c6b9e9548853665afab3a6ff, type: 3}
   m_Name: '#009 Cleaner Box Color Storage Intro'
   m_EditorClassIdentifier: 
+  worldIndex: 0
   levelIndex: 9
   dialogNodes:
   - speaker: Coopa
     lines:
-    - Did you know, ...
-    - Paint wiped off with a [Cleaner box] can be collected later
-  - speaker: Coopa
-    lines:
-    - This is kinda comlex, ... I know!
+    - By the way, ...
+    - CoBas can store colors in the cleaner box for later and then regain it.

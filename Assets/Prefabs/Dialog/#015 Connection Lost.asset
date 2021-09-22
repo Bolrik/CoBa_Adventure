@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27aefe63c6b9e9548853665afab3a6ff, type: 3}
   m_Name: '#015 Connection Lost'
   m_EditorClassIdentifier: 
+  worldIndex: 0
   levelIndex: 15
   dialogNodes:
   - speaker: Dabsi
@@ -21,7 +22,7 @@ MonoBehaviour:
   - speaker: Dabsi
     lines:
     - The last thing #hat is k#own...
-    - "He w!s attempt&ng to s0lve l3v%l \xA7="
+    - He w!s attempt&ng to s0lve l3v%l 30
   - speaker: '#*!->='
     lines:
     - '*Connection Lost*'

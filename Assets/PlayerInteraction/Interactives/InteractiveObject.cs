@@ -14,8 +14,16 @@ namespace PlayerInteraction.Interactives
     public abstract class InteractiveObject : MonoBehaviour
     {
         public virtual bool TriggerReaction { get => true; }
+        public virtual bool PlayTouchSound { get => true; }
 
-        public virtual void OnTouch(ColorBall colorBall) { }
+        public void Touch(ColorBall colorBall)
+        {
+            if (this.PlayTouchSound)
+                Audio.AudioManager.Instance.PlayRandom(Audio.AudioAssets.WallHit);
+
+            this.OnTouch(colorBall);
+        }
+        protected virtual void OnTouch(ColorBall colorBall) { }
 
         private void OnDrawGizmos()
         {

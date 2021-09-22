@@ -30,7 +30,7 @@ namespace PlayerInteraction.Interactives
         public SpriteRenderer BodyRenderer { get { return bodyRenderer; } private set { bodyRenderer = value; } }
 
 
-        public override void OnTouch(ColorBall colorBall)
+        protected override void OnTouch(ColorBall colorBall)
         {
             if (colorBall != null)
             {

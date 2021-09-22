@@ -32,23 +32,38 @@ namespace Audio
         [SerializeField] private AudioSource audioSource;
         public AudioSource AudioSource { get { return audioSource; } }
 
+        [SerializeField] private AudioSource musicSource;
+        public AudioSource MusicSource { get { return musicSource; } }
+
+
         int MusicClipIndex { get; set; } = -1;
 
         public void SetPitch(float value)
         {
-            this.AudioSource.pitch = value;
+            this.MusicSource.pitch = value;
         }
 
         private void Update()
         {
-            if (!this.AudioSource.isPlaying)
+            if (!this.MusicSource.isPlaying)
             {
                 this.MusicClipIndex++;
                 this.MusicClipIndex %= AudioAssets.MusicClips.Length;
 
-                this.AudioSource.clip = AudioAssets.MusicClips[this.MusicClipIndex];
-                this.AudioSource.Play();
+                this.MusicSource.clip = AudioAssets.MusicClips[this.MusicClipIndex];
+                this.MusicSource.Play();
             }
+        }
+
+        public void Play(AudioClip audioClip)
+        {
+            this.AudioSource.PlayOneShot(audioClip);
+        }
+
+        public void PlayRandom(AudioClip[] audioClips)
+        {
+            AudioClip clip = audioClips[UnityEngine.Random.Range(0, audioClips.Length)];
+            this.Play(clip);
         }
     }
 }

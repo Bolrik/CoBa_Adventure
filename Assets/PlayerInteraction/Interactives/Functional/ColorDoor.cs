@@ -58,11 +58,6 @@ namespace PlayerInteraction.Interactives
             this.SetIsClosed(!this.IsClosed);
         }
 
-        public override void OnTouch(ColorBall colorBall)
-        {
-
-        }
-
         private void Update()
         {
             this.UpdateVisuals();

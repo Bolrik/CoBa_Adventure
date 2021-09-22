@@ -27,7 +27,7 @@ namespace PlayerInteraction.Interactives
 
         public ColorCode ColorCode { get; private set; }
 
-        public override void OnTouch(ColorBall colorBall)
+        protected override void OnTouch(ColorBall colorBall)
         {
             ColorCode otherCode = colorBall.ColorCode;
             ColorCode thisCode = this.ColorCode;

@@ -10,14 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 27aefe63c6b9e9548853665afab3a6ff, type: 3}
-  m_Name: '#018 Sacrifice'
+  m_Name: '#019 I am back'
   m_EditorClassIdentifier: 
-  levelIndex: 18
+  worldIndex: 0
+  levelIndex: 19
   dialogNodes:
   - speaker: Coopa
     lines:
-    - Uh oh I presume you will have to sacrifice one of the Cobas for this level.
+    - Pew, ... I am back.
+    - Great progress so far.
   - speaker: Coopa
     lines:
-    - Don't worry though.
-    - They will be fine after all.
+    - This area on the ground you ask?
+    - That is a sensor field. Generally we use them to count CoBas.
+    - Every time a CoBa enters or leaves it, the corresponding color is triggered.

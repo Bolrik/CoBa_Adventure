@@ -33,6 +33,14 @@ namespace Audio
         public static AudioClip[] MusicClips { get { return Instance.musicClips; } }
 
 
+        [SerializeField] private AudioClip[] wallHit;
+        public static AudioClip[] WallHit { get { return Instance.wallHit; } }
+
+        [SerializeField] private AudioClip[] coBaHit;
+        public static AudioClip[] CoBaHit { get { return Instance.coBaHit; } }
+
+        [SerializeField] private AudioClip[] coBaSelect;
+        public static AudioClip[] CoBaSelect { get { return Instance.coBaSelect; } }
 
     }
 }

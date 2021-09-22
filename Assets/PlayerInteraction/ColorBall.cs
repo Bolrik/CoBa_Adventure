@@ -94,8 +94,11 @@ namespace PlayerInteraction
 
         private void OnCollisionEnter2D(Collision2D collision)
         {
-            var trail = this.SplashParticleSystem.trails;
-            trail.colorOverTrail = new ParticleSystem.MinMaxGradient(this.ColorCode.GetColor());
+            if (this.ColorBallInfo.IsAlive)
+                Audio.AudioManager.Instance.PlayRandom(Audio.AudioAssets.CoBaHit);
+
+            var splashEffectTrail = this.SplashParticleSystem.trails;
+            splashEffectTrail.colorOverTrail = new ParticleSystem.MinMaxGradient(this.ColorCode.GetColor());
 
             this.SplashParticleSystem.Play();
 
@@ -104,7 +107,7 @@ namespace PlayerInteraction
                 return;
             }
 
-            interactive.OnTouch(this);
+            interactive.Touch(this);
         }
 
 
@@ -183,7 +186,13 @@ namespace PlayerInteraction
         public void Die()
         {
             this.SetIsAlive(false);
-            ColorBallManager.Instance.Unregister(this);
+            // ColorBallManager.Instance.Unregister(this);
+        }
+
+        public void Revive()
+        {
+            this.SetIsAlive(true);
+            // ColorBallManager.Instance.Register(this);
         }
 
         private void SetIsAlive(bool value)
@@ -208,20 +217,20 @@ namespace PlayerInteraction
         // Color
         public void AddColorCode(ColorCode colorCode)
         {
-            if (!this.ColorBallInfo.IsAlive)
-                return;
+            //if (!this.ColorBallInfo.IsAlive)
+            //    return;
 
             this.SetColorCode(this.ColorCode.Mix(colorCode));
         }
 
         public void SetColorCode(ColorCode colorCode)
         {
-            if (!this.ColorBallInfo.IsAlive)
-                return;
+            //if (!this.ColorBallInfo.IsAlive)
+            //    return;
 
             this.ColorCode = colorCode;
             
-            if (this.ColorCode > ColorCode.Blue)
+            if (this.ColorCode > ColorCode.Blue && this.ColorBallInfo.IsAlive)
             {
                 this.Die();
             }
@@ -234,6 +243,8 @@ namespace PlayerInteraction
         public override void OnGrab()
         {
             AchievementManager.Instance.Set(AchievementType.GrabACoBa);
+
+            Audio.AudioManager.Instance.PlayRandom(Audio.AudioAssets.CoBaSelect);
         }
     }
 

@@ -32,10 +32,10 @@ namespace Level
 
             // Flag
             scheme.Add(() => GoalFlag.Create(), 8, 0);
-            scheme.Add(() => GoalFlag.Create(1, 0), 6, 8); // Enter Collection 2
+            scheme.Add(() => GoalFlag.Create(1, 0), 6, 8); // Enter World 2
 
             // Ball
-            scheme.Add(() => ColorBall.Create(ColorCode.None), 1, 1);
+            scheme.Add(() => ColorBall.Create(ColorCode.None), 1, 2);
 
             // Box
             scheme.Add(() => ColorBox.Create(ColorCode.Green), 1, 8);
@@ -53,8 +53,8 @@ namespace Level
             scheme.Add(() => ColorDoor.Create(ColorCode.Green, false, true), 8, 6, 8, 6);
 
             // DDoor
-            scheme.Add(() => DetectorDoor.Create(2, false), 0, 6, 2, 6);
-            scheme.Add(() => DetectorDoor.Create(4, false), 3, 3, 3, 5);
+            scheme.Add(() => DetectorDoor.Create(ColorCode.None, 2, false), 0, 6, 2, 6);
+            scheme.Add(() => DetectorDoor.Create(ColorCode.None, 4, false), 3, 3, 3, 5);
 
             // Death
             scheme.Add(() => DeathBox.Create(), 4, 8);

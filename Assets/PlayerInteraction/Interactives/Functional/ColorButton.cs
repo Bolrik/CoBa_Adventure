@@ -31,7 +31,7 @@ namespace PlayerInteraction.Interactives
 
 
 
-        public override void OnTouch(ColorBall colorBall)
+        protected override void OnTouch(ColorBall colorBall)
         {
             if (colorBall != null)
             {

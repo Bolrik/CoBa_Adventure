@@ -39,13 +39,6 @@ namespace Basics
         [SerializeField] private Text levelNumberText;
         public Text LevelNumberText { get { return levelNumberText; } }
 
-        [SerializeField] private AudioSource musicSource;
-        public AudioSource MusicSource { get { return musicSource; } }
-
-
-
-
-
 
         GameSpeedManager GameSpeedManager { get => GameSpeedManager.Instance; }
 
@@ -79,20 +72,25 @@ namespace Basics
             AudioManager.Instance.SetPitch(1 - (.2f * (1 - gameSpeed)));
 
             // Input for Level Manager...
-            if (SceneManager.GetActiveScene().buildIndex == 2 && 
+            if (SceneManager.GetActiveScene().buildIndex == 2 &&
                 Input.GetKeyDown(KeyCode.R))
             {
                 LevelManager.Instance.Reload();
             }
             else if (SceneManager.GetActiveScene().buildIndex == 2)
             {
-                if (Input.GetKeyDown(KeyCode.Escape))
-                    LevelManager.Instance.BackToTitleScreen();
+                if (LevelManager.Instance.IsLevelDone &&
+                    Input.anyKeyDown)
+                    LevelManager.Instance.Next();
+                else if (Input.GetKeyDown(KeyCode.Escape))
+                {
+                    if (Dialogs.DialogManager.Instance.IsActive)
+                        Dialogs.DialogManager.Instance.StopDialog();
+                    else
+                        LevelManager.Instance.BackToTitleScreen();
+                }
 #warning DEBUG
                 else if (Input.GetKeyDown(KeyCode.T))
-                    LevelManager.Instance.Next();
-                else if (LevelManager.Instance.IsLevelDone &&
-                    Input.anyKeyDown)
                     LevelManager.Instance.Next();
             }
         }

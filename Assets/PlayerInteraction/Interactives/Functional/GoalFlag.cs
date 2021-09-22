@@ -24,7 +24,7 @@ namespace PlayerInteraction.Interactives
         public int WorldIndex { get; private set; }
         public int LevelIndex { get; private set; }
 
-        public override void OnTouch(ColorBall colorBall)
+        protected override void OnTouch(ColorBall colorBall)
         {
             LevelManager.Instance.MarkAsDone(this, colorBall);
         }

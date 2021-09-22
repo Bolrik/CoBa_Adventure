@@ -46,7 +46,7 @@ namespace Level
             scheme.Add(() => ColorDoor.Create(ColorCode.Red, true), 3, 0, 3, 2);
 
             // DDoor
-            scheme.Add(() => DetectorDoor.Create(5, false), 0, 3, 2, 3);
+            scheme.Add(() => DetectorDoor.Create(ColorCode.None, 5, false), 0, 3, 2, 3);
 
         }
     }

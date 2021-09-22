@@ -21,12 +21,5 @@ namespace PlayerInteraction.Interactives
 
         [SerializeField] private SpriteRenderer spriteRenderer;
         SpriteRenderer SpriteRenderer { get { return spriteRenderer; } }
-
-
-
-        public override void OnTouch(ColorBall colorBall)
-        {
-
-        }
     }
 }

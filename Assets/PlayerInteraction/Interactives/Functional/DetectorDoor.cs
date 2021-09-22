@@ -10,26 +10,17 @@ using UnityEngine;
 
 namespace PlayerInteraction.Interactives
 {
-    public class DetectorDoor : InteractiveObject, IGrabSignalReceiver
+    public class DetectorDoor : InteractiveObject, IGrabSignalReceiver, IColorSignalReceiver
     {
-        public static DetectorDoor Create(int detectionCount, bool isClosed)
+        public static DetectorDoor Create(ColorCode colorCode, int timer, bool isClosed)
         {
             DetectorDoor instance = GameObject.Instantiate(GameAssets.DetectorDoor);
-            instance.DetectionCountMax = instance.DetectionCount = detectionCount;
-            instance.IsClosed = isClosed;
+            instance.ColorCode = colorCode;
+            instance.TimerMax = instance.Timer = timer;
+            instance.DefaultState = instance.IsClosed = isClosed;
 
             return instance;
         }
-
-        [Header("Info")]
-        [SerializeField] private bool isClosed = false;
-        public bool IsClosed { get { return isClosed; } private set { isClosed = value; } }
-
-        [SerializeField] private int detectionCount;
-        public int DetectionCount { get { return detectionCount; } private set { detectionCount = value; } }
-
-        [SerializeField] private int detectionCountMax = 3;
-        public int DetectionCountMax { get { return detectionCountMax; } private set { detectionCountMax = value; } }
 
         [Header("Config")]
         [SerializeField] private Collider2D defaultCollider;
@@ -39,16 +30,21 @@ namespace PlayerInteraction.Interactives
         [SerializeField] private SpriteRenderer bodyRenderer;
         public SpriteRenderer BodyRenderer { get { return bodyRenderer; } private set { bodyRenderer = value; } }
 
-
+        int TimerMax { get; set; }
+        int Timer { get; set; }
         bool IsTriggered { get; set; }
+        bool DefaultState { get; set; }
 
+        public bool IsClosed { get; private set; }
+
+        public ColorCode ColorCode { get; set; }
 
         private void Start()
         {
             GrabManager.Instance.Register(this);
+            ColorSignalManager.Register(this);
 
-            this.DetectionCount = this.DetectionCountMax;
-            this.SetIsClosed(this.IsClosed);
+            this.ResetDoor();
         }
 
         public void UpdateSignal(IGrabObject grabObject)
@@ -57,14 +53,29 @@ namespace PlayerInteraction.Interactives
                 this.SetIsClosed(!this.IsClosed);
         }
 
+        public void UpdateSignal(ColorCode colorCode)
+        {
+            if (colorCode == this.ColorCode)
+            {
+                this.ResetDoor();
+            }
+        }
+
+        private void ResetDoor()
+        {
+            this.Timer = this.TimerMax;
+            this.IsTriggered = false;
+            this.SetIsClosed(this.DefaultState);
+        }
+
         private bool Count()
         {
             if (this.IsTriggered)
                 return false;
 
-            this.DetectionCount--;
+            this.Timer--;
 
-            bool result = this.DetectionCount == 0;
+            bool result = this.Timer == 0;
 
             this.IsTriggered = result;
 
@@ -96,7 +107,7 @@ namespace PlayerInteraction.Interactives
             }
             else
             {
-                spriteIdx = this.DetectionCount;
+                spriteIdx = this.Timer;
 
                 if (spriteIdx > 9)
                 {
@@ -110,7 +121,7 @@ namespace PlayerInteraction.Interactives
                 this.BodyRenderer.sprite = GameAssets.NumberSprites[spriteIdx];
             }
 
-            Color color = Color.white; ;
+            Color color = this.ColorCode.GetColor();
             color.a = this.IsClosed ? 1 : .5f;
             this.BodyRenderer.color = color;
         }

@@ -27,6 +27,7 @@
             this.Levels.Add(Level_021.Instance);
             this.Levels.Add(Level_022.Instance);
             this.Levels.Add(Level_023.Instance);
+            this.Levels.Add(Level_024.Instance);
         }
     }
 }
