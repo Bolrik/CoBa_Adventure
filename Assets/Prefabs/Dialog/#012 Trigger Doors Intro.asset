@@ -12,12 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27aefe63c6b9e9548853665afab3a6ff, type: 3}
   m_Name: '#012 Trigger Doors Intro'
   m_EditorClassIdentifier: 
+  worldIndex: 0
   levelIndex: 12
   dialogNodes:
   - speaker: Coopa
     lines:
-    - Oh, ... I hate these doors
+    - Ah, these are [Triggers Doors]
+    - They close automatically after a certain number of slings.
   - speaker: Coopa
     lines:
-    - They close automatically after a certain number of slings.
     - Just hurry a bit, hehe

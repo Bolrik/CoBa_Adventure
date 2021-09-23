@@ -100,7 +100,8 @@ namespace PlayerInteraction.Interactives
             if (!this.IsInvisible)
                 return;
 
-            Debug.Log(collider);
+            Debug.Log("The Secret!");
+            Achievements.AchievementManager.Instance.Set(Achievements.AchievementType.TheSecret);
 
             if (collider.GetComponentInParent<ColorBall>() is ColorBall colorBall)
             {

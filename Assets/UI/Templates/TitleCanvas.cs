@@ -45,7 +45,7 @@ namespace UI.Templates
         public void Update()
         {
             if (this.IsAchievementOverlay && 
-                Input.GetKeyDown(KeyCode.Escape))
+                (Input.GetKeyDown(KeyCode.Escape) || Input.GetMouseButtonUp(1)))
             {
                 this.ShowAchievementOverlay(false);
             }

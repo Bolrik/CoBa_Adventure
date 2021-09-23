@@ -17,10 +17,17 @@ namespace UI.Templates
         [SerializeField] private GameObject buttonHost;
         public GameObject ButtonHost { get { return buttonHost; } }
 
-
+        bool LockedLoad { get; set; }
 
         private void Start()
         {
+            this.LoadLevels(false);
+        }
+
+        private void LoadLevels(bool includeLocked)
+        {
+            this.ButtonHost.transform.Clear();
+
             IEnumerable<World> worlds = LevelManager.Instance.GetWorlds();
 
             int worldIndex = 0;
@@ -34,7 +41,7 @@ namespace UI.Templates
                 {
                     Level.Level level = world.Get(levelIndex);
 
-                    if (!level.IsUnlocked)
+                    if (!includeLocked && !level.IsUnlocked)
                         continue;
 
                     LevelButton levelButton = GameObject.Instantiate(this.LevelButtonPrefab);
@@ -47,17 +54,15 @@ namespace UI.Templates
 
                 worldIndex++;
             }
+        }
 
-            //IEnumerable<int> levels = LevelManager.Instance.GetLevelIndices();
-
-            //foreach (var levelIndex in levels)
-            //{
-            //    LevelButton levelButton = GameObject.Instantiate(this.LevelButtonPrefab);
-            //    levelButton.Index = levelIndex;
-            //    levelButton.SetText($"{levelIndex}");
-
-            //    levelButton.transform.SetParent(this.ButtonHost.transform, false);
-            //}
+        private void Update()
+        {
+            if (!this.LockedLoad && Input.GetKeyDown(KeyCode.T))
+            {
+                this.LockedLoad = true;
+                this.LoadLevels(true);
+            }
         }
     }
 }

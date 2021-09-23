@@ -17,6 +17,7 @@ MonoBehaviour:
   dialogNodes:
   - speaker: Coopa
     lines:
+    - '*sigh*'
     - Unfortunately the supervisor called me and I have to leave you alone again.
   - speaker: Coopa
     lines:

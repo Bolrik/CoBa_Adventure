@@ -537,7 +537,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.47843137, g: 0.5372549, b: 0.5254902, a: 0}
+  m_BackGroundColor: {r: 0.54901963, g: 0.69411767, b: 0.8, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -993,6 +993,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: bb6b965b42d222045bf8cb0df046379f, type: 2}
   - {fileID: 11400000, guid: 1acecc0dbc1dfef4799cedad325a7491, type: 2}
   - {fileID: 11400000, guid: b8ba794ccfe98e342a9044ef0ce9b5f9, type: 2}
+  - {fileID: 11400000, guid: 456b66a18bb61ed4499c05770e12defa, type: 2}
   achievementPanel: {fileID: 2425650206690989457, guid: ca4e4d1ff20fb794e8c1ae9927b2d944, type: 3}
 --- !u!1 &892054527
 GameObject:

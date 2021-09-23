@@ -12,18 +12,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27aefe63c6b9e9548853665afab3a6ff, type: 3}
   m_Name: '#0xx Developer Note'
   m_EditorClassIdentifier: 
+  worldIndex: 0
   levelIndex: 16
   dialogNodes:
-  - speaker: Developer
+  - speaker: Bolrik
     lines:
     - Hey there, ...
     - Right now that's the end of my little project
-  - speaker: Developer
+  - speaker: Bolrik
     lines:
     - I really appreciate that you played it
     - And wanted to say 'Thank You'
-  - speaker: Developer
+  - speaker: Bolrik
     lines:
     - I hope you enjoyed it :)
     - Feedback of any kind is absolutely welcome
     - See Ya
+  - speaker: Bolrik
+    lines:
+    - Oh... And did you find that 'Secret' Level? :s

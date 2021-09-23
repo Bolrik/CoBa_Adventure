@@ -185,10 +185,12 @@ namespace Achievements
 
     public enum AchievementType
     {
+        // Basics
         GrabACoBa,
         HoleInOne,
         DeadManWalking,
         FiveTimesAlready,
+        TheSecret,
 
         // Blocks / Tiles
         HitTheButton,

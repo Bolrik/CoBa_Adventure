@@ -117,22 +117,40 @@ namespace PlayerInteraction
             if (!this.ColorBallInfo.IsAlive)
             {
                 this.EyeRenderer.sprite = GameAssets.ColorBallSprites[3];
+                this.EyeRenderer.transform.localPosition = Vector3.zero;
                 return;
             }
 
             int spriteIdx = this.ColorBallInfo.IsMoving ? 1 : 0;
 
+            Collider2D bestCollider = null;
+            float bestDistance = 0;
+
             foreach (var nearby in this.NearbyInteractiveObjects)
             {
+                Collider2D collider = nearby.Key;
+                float distance = (this.transform.position - collider.ClosestPoint(this.transform.position).ToVector3()).magnitude;
+
+                if (bestCollider == null || distance < bestDistance)
+                {
+                    bestCollider = collider;
+                }
+
                 if (!nearby.Value.TriggerReaction)
                     continue;
 
-                Collider2D collider = nearby.Key;
-
-                float distance = (this.transform.position - collider.ClosestPoint(this.transform.position).ToVector3()).magnitude;
-
                 if (distance < GameSettings.SlowMotionPeak && this.ColorBallInfo.IsAwake && this.ColorBallInfo.IsMoving)
                     spriteIdx = 2;
+            }
+
+            if (bestCollider != null)
+            {
+                Vector3 delta = bestCollider.transform.position - this.transform.position;
+                this.EyeRenderer.transform.localPosition = delta.normalized * .17f;
+            }
+            else
+            {
+                this.EyeRenderer.transform.localPosition = this.Body.velocity.normalized * .17f;
             }
 
             this.EyeRenderer.sprite = GameAssets.ColorBallSprites[spriteIdx];
