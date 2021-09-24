@@ -4,6 +4,7 @@ using PlayerInteraction.Interactives;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 namespace Level
@@ -266,7 +267,14 @@ namespace Level
 
         private bool Unlock(GoalFlag goalFlag)
         {
-            return this.Unlock(goalFlag.WorldIndex, goalFlag.LevelIndex);
+            bool result = this.Unlock(goalFlag.WorldIndex, goalFlag.LevelIndex);
+
+            if (!result)
+            {
+                Debug.Log("Could not unlock GoalFlag");
+            }
+
+            return result;
         }
 
         private bool Unlock(int worldIndex, int levelIndex)
@@ -283,6 +291,8 @@ namespace Level
                     return true;
                 }
             }
+
+            Debug.Log($"Could not unlock World {worldIndex} Level {levelIndex}");
 
             return false;
         }

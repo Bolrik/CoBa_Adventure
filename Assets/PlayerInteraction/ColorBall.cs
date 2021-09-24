@@ -150,7 +150,8 @@ namespace PlayerInteraction
             }
             else
             {
-                this.EyeRenderer.transform.localPosition = this.Body.velocity.normalized * .17f;
+                float viewDistance = Mathf.Min(this.Body.velocity.magnitude / 2, .17f);
+                this.EyeRenderer.transform.localPosition = this.Body.velocity.normalized * viewDistance;
             }
 
             this.EyeRenderer.sprite = GameAssets.ColorBallSprites[spriteIdx];

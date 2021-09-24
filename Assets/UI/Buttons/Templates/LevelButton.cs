@@ -46,9 +46,10 @@ namespace UI.Buttons
             float rotationZ = this.AnimationRotation.PingPong(-this.Range, this.Range);
 
 
-            Quaternion rotation = this.transform.rotation;
-            rotation.eulerAngles = new Vector3(0, 0, rotationZ);
-            this.transform.rotation = rotation;
+            //Quaternion rotation = this.transform.rotation;
+            //rotation.eulerAngles = new Vector3(0, 0, rotationZ);
+            //this.transform.rotation = rotation;
+            this.transform.localEulerAngles = new Vector3(0, 0, rotationZ);
         }
     }
 }

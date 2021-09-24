@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 27aefe63c6b9e9548853665afab3a6ff, type: 3}
-  m_Name: '#0xx Developer Note'
+  m_Name: '#026 Developer Note'
   m_EditorClassIdentifier: 
   worldIndex: 0
-  levelIndex: 16
+  levelIndex: 25
   dialogNodes:
   - speaker: Bolrik
     lines:
     - Hey there, ...
-    - Right now that's the end of my little project
+    - Right now that's the end of my little Project
   - speaker: Bolrik
     lines:
     - I really appreciate that you played it
@@ -30,4 +30,5 @@ MonoBehaviour:
     - See Ya
   - speaker: Bolrik
     lines:
-    - Oh... And did you find that 'Secret' Level? :s
+    - Oh... And did you find the 'Secret' Level? :-s
+    - Search in Level 17 :-)
